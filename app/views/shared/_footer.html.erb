@@ -1,0 +1,24 @@
+<footer>
+<div class="container row row-cols-5 py-5 border-top">
+  <div class="col"></div>
+  <div class="col">
+    <%= link_to root_path, class: "footer-logo d-flex align-items-center mb-3 text-decoration-none" do %>
+      <%= image_tag "https://raw.githubusercontent.com/math-mavens/the-islanders/master/app/assets/images/the-islanders-logo-cropped.png" %>
+    <% end %>
+    <p class="footer-text">The Islanders © 2022</p>
+  </div>
+  <div class="col"></div>
+  <div class="col">
+    <h5>Useful Links</h5>
+      <ul class="nav flex-column">
+        <li><%= link_to "Book Now", islands_path, class:"nav-item mb-2 footer-text" %></li>
+      </ul>
+  </div>
+    <div class="col">
+      <h5>Contact Us</h5>
+        <ul class="nav flex-column">
+          <li><%= link_to "Book Now", islands_path, class:"nav-item mb-2 footer-text" %></li>
+        </ul>
+    </div>
+  </div>
+</footer>
