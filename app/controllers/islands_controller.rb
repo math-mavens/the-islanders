@@ -1,5 +1,5 @@
 class IslandsController < ApplicationController
-  before_action :set_islands, except: %i[new create]
+  before_action :set_island, only: %i[show edit update destroy]
 
   def index
     @islands = Island.all
@@ -38,7 +38,7 @@ class IslandsController < ApplicationController
 
   private
 
-  def set_islands
+  def set_island
     @island = Island.find(params[:id])
   end
 
