@@ -20,7 +20,7 @@ class IslandsController < ApplicationController
       redirect_to island_path(@island)
     else
       render :new, status: :unprocessable_entity
-    Ending 
+    end
   end
 
   def edit
