@@ -1,6 +1,14 @@
 class IslandsController < ApplicationController
   before_action :set_islands, except: %i[new create]
 
+  def index
+    @islands = Island.all
+  end
+
+  def show
+    @island = Island.find(params[:id])
+  end
+
   def new
     @island = Island.new
   end
@@ -12,7 +20,7 @@ class IslandsController < ApplicationController
       redirect_to island_path(@island)
     else
       render :new, status: :unprocessable_entity
-    end
+    Ending 
   end
 
   def edit

@@ -1,0 +1,56 @@
+<div class="container">
+  <h1 class="text-center mt-4 mb-4">All islands</h1>
+  <div class="container-home">
+    <% @islands.each do |island| %>
+    <div class="card-trip">
+      <img src="https://theworldtravelguy.com/wp-content/uploads/2021/03/DSCF1480_1200.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= island.name %></h2>
+          <p><%= island.description %></p>
+          <div class="d-flex">
+          </div>
+        </div>
+        <h2 class="card-trip-pricing"><%= island.price_per_day.ceil %>€/day</h2>
+        <img src="https://lumiere-a.akamaihd.net/v1/images/pooh_baeb7dc6.jpeg?region=410,0,1229,1229" class="card-trip-user avatar-bordered" />
+      </div>
+    <% end %>
+    </div>
+  </div>
+    <h1 class="text-center mt-4 mb-4">All islands</h1>
+  <div class="container-home">
+    <% @islands.each do |island| %>
+    <div class="card-trip rounded">
+      <img class="img-island-card" src="https://theworldtravelguy.com/wp-content/uploads/2021/03/DSCF1480_1200.jpg" />
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= island.name %></h2>
+          <p><%= island.description %></p>
+          <div class="d-flex justify-content-between mt-2">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+              </svg>
+              <span class="align-middle">2</span>
+            </div>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"/>
+              </svg>
+              <span class="align-middle">300</span>
+            </div>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+              </svg>
+              <span class="align-middle">2</span>
+            </div>
+          </div>
+        </div>
+        <h2 class="card-trip-pricing"><%= island.price_per_day.ceil %>€/day</h2>
+        <img src="https://lumiere-a.akamaihd.net/v1/images/pooh_baeb7dc6.jpeg?region=410,0,1229,1229" class="card-trip-user avatar-bordered" />
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
