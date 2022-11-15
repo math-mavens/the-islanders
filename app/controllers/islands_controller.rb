@@ -9,7 +9,7 @@ class IslandsController < ApplicationController
         lat: island.latitude,
         lng: island.longitude,
         info_window: render_to_string(partial: "info_window", locals: { island: island }),
-        image_url: helpers.asset_url("/app/assets/images/the-islanders-logo-cropped.png")
+        image_url: helpers.asset_url("the-islanders-map-logo.png")
       }
     end
   end
