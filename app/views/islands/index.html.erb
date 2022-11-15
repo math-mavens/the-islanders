@@ -2,13 +2,16 @@
     <h1 class="text-center mt-4 mb-4">All islands</h1>
   <div class="container-home">
     <% @islands.each do |island| %>
-      <%= link_to island_path(island) do %>
         <div class="card">
-          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src="https://theworldtravelguy.com/wp-content/uploads/2021/03/DSCF1480_1200.jpg" class="img-fluid" />
-          </div>
+          <%= link_to island_path(island) do %>
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://theworldtravelguy.com/wp-content/uploads/2021/03/DSCF1480_1200.jpg" class="img-fluid" />
+            </div>
+          <% end %>
           <div class="card-body">
-            <h5 class="card-title font-weight-bold"><%= island.name %></h5>
+            <%= link_to island_path(island) do %>
+              <h5 class="card-title font-weight-bold text-decoration-none"><%= island.name %></h5>
+            <% end %>
             <ul class="list-unstyled list-inline mb-0">
               <li class="list-inline-item me-0">
                 <i class="fas fa-star text-warning fa-xs"> </i>
@@ -50,7 +53,7 @@
             </ul>
           </div>
         </div>
-      <% end %>
+
     <% end %>
   </div>
 </div>
