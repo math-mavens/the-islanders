@@ -4,6 +4,12 @@ class IslandsController < ApplicationController
 
   def index
     @islands = Island.all
+    @markers = @islands.geocoded.map do |island|
+      {
+        lat: island.latitude,
+        lng: island.longitude
+      }
+    end
   end
 
   def show
