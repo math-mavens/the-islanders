@@ -1,0 +1,7 @@
+ <%= simple_form_for @island do |f| %>
+      <%= f.input :name, placeholder: "Write your Island's Name" %>
+      <%= f.input :address, placeholder: "Write your Island's address here" %>
+      <%= f.input :price_per_day, placeholder: "State your rate" %>
+      <%= f.input :description, placeholder: "Write your Island's description here" %>
+      <%= f.submit "Confirm", class: "btn btn-primary" %>
+  <% end %>
