@@ -8,7 +8,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log('hi')
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -24,16 +23,17 @@ export default class extends Controller {
   }
 
   #addMarkersToMap() {
-      this.markersValue.forEach((marker) => {
-        const customMarker = document.createElement("div")
-        customMarker.className = "marker"
-        customMarker.style.backgroundImage = `url('${marker.image_url}')`
-        customMarker.style.backgroundSize = "contain"
-        customMarker.style.width = "25px"
-        customMarker.style.height = "25px"
+    this.markersValue.forEach((marker) => {
+      console.log( `url('${marker.image_url}')`);
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('${marker.image_url}')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "50px"
+      customMarker.style.height = "50px"
 
       const popup = new mapboxgl.Popup().setHTML(marker.info_window)
-      new mapboxgl.Marker()
+      new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.map)

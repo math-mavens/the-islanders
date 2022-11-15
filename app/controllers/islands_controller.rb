@@ -4,7 +4,11 @@ class IslandsController < ApplicationController
 
   def index
     @islands = Island.all
-    @markers = @islands.geocoded.map do |island|
+  end
+
+  def show
+    @island = Island.find(params[:id])
+    @markers = Island.where(id: params[:id]).geocoded.map do |island|
       {
         lat: island.latitude,
         lng: island.longitude,
@@ -12,10 +16,6 @@ class IslandsController < ApplicationController
         image_url: helpers.asset_url("the-islanders-map-logo.png")
       }
     end
-  end
-
-  def show
-    @island = Island.find(params[:id])
   end
 
   def new
