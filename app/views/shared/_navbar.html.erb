@@ -11,19 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item ms-3">
-            <%= link_to "The Islands", "#", class: "nav-link" %>
+            <%= link_to "The Islands", islands_path, class: "nav-link" %>
           </li>
           <li class="nav-item ms-3">
-            <%= link_to "Rent", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item ms-3">
-            <%= link_to "Host", "#", class: "nav-link" %>
+            <%= link_to "Host", new_island_path, class: "nav-link" %>
           </li>
           <% if user_signed_in? %>
           <li class="nav-item dropdown ms-3">
             <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <button type="button" class="btn btn-secondary rounded-circle text-white align-bottom" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.email[0].capitalize %>
+            <button type="button" class="btn btn-secondary rounded-circle text-white" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div><%= current_user.email[0].capitalize %></div>
             </button>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
