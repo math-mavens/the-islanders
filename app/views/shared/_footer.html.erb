@@ -1,0 +1,28 @@
+<footer>
+<div class="container row row-cols-5 py-5 border-top">
+  <div class="col logo-column">
+    <%= link_to root_path, class: "footer-logo d-flex align-items-center mb-3 text-decoration-none" do %>
+      <%= image_tag "https://raw.githubusercontent.com/math-mavens/the-islanders/master/app/assets/images/the-islanders-logo-cropped.png" %>
+    <% end %>
+    <p class="footer-text">The Islanders © 2022</p>
+    <p class="footer-text">The best private island renting platform you can find.</p>
+  </div>
+  <div class="col"></div>
+  <div class="col">
+      <ul class="nav flex-column">
+        <h5>Useful Links</h5>
+          <li><%= link_to "Book Now", islands_path, class:"nav-item mb-2 footer-text" %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path, class:"nav-item mb-2 footer-text" %></li>
+          <li><%= link_to "Sign In", new_user_session_path, class:"nav-item mb-2 footer-text" %></li>
+      </ul>
+  </div>
+    <div class="col">
+      <ul class="nav flex-column">
+        <h5>Contact Us</h5>
+          <li class="nav-item mb-2 footer-text"><i class="fa-sharp fa-solid fa-phone"></i> +62-12345678910</li>
+          <li class="nav-item mb-2 footer-text"><i class="fa-solid fa-envelope"></i> contact@islanders.com</li>
+          <li class="nav-item mb-2 footer-text"><i class="fa-solid fa-location-dot"></i> Frii, Canggu, Kuta Utura</li>
+      </ul>
+    </div>
+  </div>
+</footer>
