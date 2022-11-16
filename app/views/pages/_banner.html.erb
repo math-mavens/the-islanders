@@ -12,7 +12,7 @@
           <div class="carousel-caption text-start">
             <h1>Nusa Samongan</h1>
             <p>Your own little piece of paradise.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Signup</a></p>
+            <p><%= link_to "Signup", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <div class="carousel-caption">
             <h1>Nusa Baelongan</h1>
             <p>Heaven on earth</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Rent this island</a></p>
+            <p><%= link_to "Book this island", islands_path, class: "btn btn-primary btn-lg" %></p>
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
           <div class="carousel-caption text-start">
             <h1>Longinada</h1>
             <p>Your private little escape</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn More</a></p>
+            <p><%= link_to "Learn more", islands_path, class: "btn btn-primary btn-lg" %></p>
           </div>
         </div>
       </div>
