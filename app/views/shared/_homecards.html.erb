@@ -2,7 +2,7 @@
   <h2 class="text-center ">Our best islands</h2>
   <p class="text-center py-2">Welcome to the biggest islands booking platform. Check our different islands in Indonesia and find yours.<br> Here are our 6 best islands for you. You can check it in details and look at the options (bedrooms, size, pool, ..) available on each.</p>
   <div class="container-home mt-4">
-    <% @islands.each do |island| %>
+    <% @islands.take(6).each do |island| %>
         <div class="card">
           <%= link_to island_path(island) do %>
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
