@@ -1,6 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'banner' %>
 
-<% if user_signed_in? %>
-  <%= current_user.email %>
-<% end %>
+<div class="container-fluid">
+  <%= render 'features' %>
+</div>
+
+<div class="container-fluid">
+  <% if user_signed_in? %>
+    <%= current_user.email %>
+  <% end %>
+</div>

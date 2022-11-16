@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid mx-5">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "the-islanders-logo-cropped" %>
+      <%= image_tag "https://raw.githubusercontent.com/math-mavens/the-islanders/master/app/assets/images/the-islanders-logo-cropped.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,19 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item ms-3">
-            <%= link_to "The Islands", "#", class: "nav-link" %>
+            <%= link_to "The Islands", islands_path, class: "nav-link" %>
           </li>
           <li class="nav-item ms-3">
-            <%= link_to "Rent", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item ms-3">
-            <%= link_to "Host", "#", class: "nav-link" %>
+            <%= link_to "Host", new_island_path, class: "nav-link" %>
           </li>
           <% if user_signed_in? %>
           <li class="nav-item dropdown ms-3">
             <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <button type="button" class="btn btn-secondary rounded-circle text-white align-bottom" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= current_user.email[0].capitalize %>
+            <button type="button" class="btn btn-secondary rounded-circle text-white" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div><%= current_user.email[0].capitalize %></div>
             </button>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>

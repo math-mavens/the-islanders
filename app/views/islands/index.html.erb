@@ -2,19 +2,57 @@
   <h1 class="text-center mt-4 mb-4">All islands</h1>
   <div class="container-home">
     <% @islands.each do |island| %>
-    <div class="card-trip">
-      <img src="https://theworldtravelguy.com/wp-content/uploads/2021/03/DSCF1480_1200.jpg" />
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= island.name %></h2>
-          <p><%= island.description %></p>
-          <div class="d-flex">
+        <div class="card">
+          <%= link_to island_path(island) do %>
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="https://theworldtravelguy.com/wp-content/uploads/2021/03/DSCF1480_1200.jpg" class="img-fluid" />
+            </div>
+          <% end %>
+          <div class="card-body">
+            <%= link_to island_path(island) do %>
+              <h5 class="card-title font-weight-bold text-decoration-none"><%= island.name %></h5>
+            <% end %>
+            <ul class="list-unstyled list-inline mb-0">
+              <li class="list-inline-item me-0">
+                <i class="fas fa-star text-warning fa-xs"> </i>
+              </li>
+              <li class="list-inline-item me-0">
+                <i class="fas fa-star text-warning fa-xs"></i>
+              </li>
+              <li class="list-inline-item me-0">
+                <i class="fas fa-star text-warning fa-xs"></i>
+              </li>
+              <li class="list-inline-item me-0">
+                <i class="fas fa-star text-warning fa-xs"></i>
+              </li>
+              <li class="list-inline-item">
+                <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+              </li>
+              <li class="list-inline-item">
+                <p class="text-muted">4.5 (413)</p>
+              </li>
+            </ul>
+            <p class="mb-2 text-black"><i class="bi bi-geo-alt-fill"></i> <%= island.address.truncate(30) %></p>
+            <p class="card-text text-muted">
+              <%= island.description.truncate(120) %>
+            </p>
+            <hr class="my-4" />
+            <ul class="list-unstyled list-inline d-flex justify-content-between mx-1">
+              <li class="list-inline-item me-0">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-bed"></i>&nbsp;<span class="text-muted">5</span></div>
+              </li>
+              <li class="list-inline-item me-0">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-maximize"></i>&nbsp;<span class="text-muted">500m</span></div>
+              </li>
+              <li class="list-inline-item me-0">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-person"></i>&nbsp;<span class="text-muted">10</span></div>
+              </li>
+              <li class="list-inline-item me-0">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-water-ladder"></i>&nbsp;<span class="text-muted">1</span></div>
+              </li>
+            </ul>
           </div>
         </div>
-        <h2 class="card-trip-pricing"><%= island.price_per_day.ceil %>€/day</h2>
-        <img src="https://lumiere-a.akamaihd.net/v1/images/pooh_baeb7dc6.jpeg?region=410,0,1229,1229" class="card-trip-user avatar-bordered" />
-      </div>
-    </div>
     <% end %>
   </div>
 </div>
