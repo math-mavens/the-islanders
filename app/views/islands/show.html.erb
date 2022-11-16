@@ -4,14 +4,46 @@
     <div class="row">
       <div class="col-lg-9 ">
         <h1><%= @island.name %></h1>
+          <div>
+            <ul class="list-unstyled list-inline details-of-island d-flex">
+              <li class="list-inline-item me-4">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-lg fa-bed"></i>&nbsp;<span class="text-muted">5</span></div>
+              </li>
+              <li class="list-inline-item me-4">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-lg fa-maximize"></i>&nbsp;<span class="text-muted">500m</span></div>
+              </li>
+              <li class="list-inline-item me-4">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-lg fa-person"></i>&nbsp;<span class="text-muted">10</span></div>
+              </li>
+              <li class="list-inline-item me-4">
+                <div class="chip me-0 text-info"><i class="fa-solid fa-lg fa-water-ladder"></i>&nbsp;<span class="text-muted">1</span></div>
+              </li>
+            </ul>
+          </div>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure</p>
-        <iframe class="rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.3944182264586!2d115.12821281488942!3d-8.653985990430977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd239c8dea75257%3A0x558ad7a6b8d7622d!2sLe%20Wagon%20Bali%20-%20Coding%20Bootcamp!5e0!3m2!1sfr!2sid!4v1668503884093!5m2!1sfr!2sid" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="d-flex">
+          <iframe class="rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.3944182264586!2d115.12821281488942!3d-8.653985990430977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd239c8dea75257%3A0x558ad7a6b8d7622d!2sLe%20Wagon%20Bali%20-%20Coding%20Bootcamp!5e0!3m2!1sfr!2sid!4v1668503884093!5m2!1sfr!2sid" width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
-      <div class="col-lg-3 rounded p-4 col-details" style="background-color: grey;">
-        <h3>Price</h3>
-        <h5><%= @island.price_per_day.round %>€/day</h5>
-        <div class="d-flex justify-content-center">
-          <a class="btn btn-primary rounded-pill px-3 book-btn-details">Book now</a>
+      <div class="col-lg-3 rounded p-4 col-details">
+        <div class="booking-infos rounded sticky">
+          <h3>Price</h3>
+          <h5><%= @island.price_per_day.round %>€/day</h5>
+          <div class="d-flex justify-content-between py-2">
+            <span>Price per m&#178;</span>
+            <span>200€</span>
+          </div>
+          <div class="d-flex justify-content-between py-2 border-top">
+            <span>Monthly Renting</span>
+            <span>25 000€</span>
+          </div>
+          <div class="d-flex justify-content-between py-2 border-top">
+            <span>Current month temperatures</span>
+            <span>25-28&#8451;</span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-primary rounded-pill px-3 book-btn-details">Book now</a>
+          </div>
         </div>
       </div>
     </div>
