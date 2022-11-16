@@ -1,0 +1,5 @@
+<h1>All Bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <p>Booking id: <%= booking.id %> by <%= booking.user.email %>, starting <%= booking.start_date %></p>
+<% end %>
