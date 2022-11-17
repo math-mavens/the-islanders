@@ -1,11 +1,11 @@
-<%= render "shared/banner" %>
+<%= render "shared/image_carousel" %>
 <div class="container">
   <div class="my-4">
     <div class="row">
       <div class="col-lg-9 ">
       <div class="d-flex align-items-start">
         <h1><%= @island.name %></h1>
-        <%= link_to  edit_island_path(@island)do %>
+        <%= link_to edit_island_path(@island)do %>
         <i class="ms-2 bi bi-pencil-square"></i>
         <% end %>
       </div>
