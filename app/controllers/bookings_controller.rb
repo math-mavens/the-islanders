@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
   def index
     @my_bookings = Booking.all.select do |booking|
-      booking.user.id == current_user.id || booking.island.user.id == current.user.id
+      booking.user.id == current_user.id || booking.island.user.id == current_user.id
     end
 
     return if @my_bookings.empty?
@@ -25,7 +25,8 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.island = Island.find(params[:island_id])
+    @island = Island.find(params[:island_id])
+    @booking.island = @island
     if @booking.save
       redirect_to bookings_path
     else
