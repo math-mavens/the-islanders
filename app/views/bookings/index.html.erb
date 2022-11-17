@@ -38,11 +38,11 @@
                   <%= button_to "Decline", booking_path(booking, status: "declined"), class:"btn btn-danger btn-sm text-light", method: :patch %>
                 <% else %>
                   <% if booking.status == "declined" %>
-                    <a class="btn btn-danger text-light"><%= booking.status.capitalize %></a>
+                    <a class="text-danger"><%= booking.status.capitalize %></a>
                   <% elsif booking.status == "pending" %>
-                    <a class="btn btn-warning text-light"><%= booking.status.capitalize  %></a>
+                    <a class="text-warning"><%= booking.status.capitalize  %></a>
                   <% else %>
-                    <a class="btn btn-success text-light"><%= booking.status.capitalize  %></a>
+                    <a class="text-success"><%= booking.status.capitalize  %></a>
                 <% end %>
                 <% end %>
               <% end %>
