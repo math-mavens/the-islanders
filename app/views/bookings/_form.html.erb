@@ -1,5 +1,67 @@
-<%= simple_form_for [@island, @booking] do |f| %>
-  <%= f.input :start_date, placeholder: "Starting from..." %>
-  <%= f.input :end_date, placeholder: "...till" %>
-  <%= f.submit "Confirm", class: "btn btn-primary" %>
-<% end %>
+<div class="container m-5">
+  <div class="row p-1">
+    <h2>New Booking</h2>
+  </div>
+  <div class="row d-flex justify-content-start p-1">
+  <div class="col-12 col-lg-6 mb-2">
+    <div class="card p-4 border-primary rounded new-booking-card">
+      <%= link_to island_path(@island) do %>
+        <h5 class="card-title font-weight-bold text-decoration-none"><%= @island.name %></h5>
+      <% end %>
+      <ul class="list-unstyled list-inline mb-0">
+        <li class="list-inline-item me-0">
+          <i class="fas fa-star text-warning fa-xs"> </i>
+        </li>
+        <li class="list-inline-item me-0">
+          <i class="fas fa-star text-warning fa-xs"></i>
+        </li>
+        <li class="list-inline-item me-0">
+          <i class="fas fa-star text-warning fa-xs"></i>
+        </li>
+        <li class="list-inline-item me-0">
+          <i class="fas fa-star text-warning fa-xs"></i>
+        </li>
+        <li class="list-inline-item">
+          <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+        </li>
+        <li class="list-inline-item">
+          <p class="text-muted">4.5 (413)</p>
+        </li>
+      </ul>
+      <div class="card-text text-muted">
+        <%= @island.description ? @island.description.truncate(220) : "" %>
+      </div>
+      <div class="pt-4">
+        <hr class="mt-4" />
+        <ul class="list-unstyled list-inline d-flex justify-content-between mx-1">
+          <li class="list-inline-item me-0">
+            <div class="chip me-0 text-info"><i class="fa-solid fa-bed"></i>&nbsp;<span class="text-muted">5</span></div>
+          </li>
+          <li class="list-inline-item me-0">
+            <div class="chip me-0 text-info"><i class="fa-solid fa-maximize"></i>&nbsp;<span class="text-muted">500m</span></div>
+          </li>
+          <li class="list-inline-item me-0">
+            <div class="chip me-0 text-info"><i class="fa-solid fa-person"></i>&nbsp;<span class="text-muted">10</span></div>
+          </li>
+          <li class="list-inline-item me-0">
+            <div class="chip me-0 text-info"><i class="fa-solid fa-water-ladder"></i>&nbsp;<span class="text-muted">1</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6">
+    <div class="card p-4 border-primary rounded new-booking-card">
+      <%= simple_form_for [@island, @booking] do |f| %>
+        <%= f.input :start_date, as: :date %>
+        <%= f.input :end_date, as: :date %>
+        <div class="d-flex justify-content-end me-1">
+          <div>
+            <%= f.submit "Confirm", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>
