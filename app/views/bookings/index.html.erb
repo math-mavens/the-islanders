@@ -2,7 +2,7 @@
   <h1>All Bookings</h1>
 
   <h3>Active Bookings</h3>
-  <% unless @my_active_bookings.empty? %>
+  <% if !@my_active_bookings.nil? && !@my_active_bookings.empty? %>
     <% @my_active_bookings.each do |booking| %>
       <div class="row mb-2">
         <div class="col">
@@ -27,7 +27,7 @@
   <% end %>
   <br>
   <h3>Previous Bookings</h3>
-  <% unless @my_previous_bookings.empty? %>
+  <% if !@my_previous_bookings.nil? && !@my_previous_bookings.empty? %>
       <% @my_previous_bookings.each do |booking| %>
         <div class="row mb-2">
           <div class="col">
