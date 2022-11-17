@@ -1,5 +1,5 @@
 .card-product {
-  height: 120px;
+  height: 180px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
@@ -30,8 +30,8 @@
 }
 
 .img-card-booking {
-  height: 120px;
-  width: 250px;
+  height: 200px;
+  width: 300px;
 
 }
 
@@ -40,5 +40,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 50px;
+}
+
+.btn-booking-card {
+  vertical-align: sub;
+}
+
+.details-booking ul {
+  list-style: none;
+  padding-inline-start: 10px;
+
+}
+
+.details-booking ul li span {
+  font-size: 18px;
+
 }
