@@ -1,47 +1,104 @@
 <div class="container-fluid px-5 py-5">
-  <h1>All Bookings</h1>
-
+  <div class="pt-4">
+    <h1>Welcome to you booking manager</h1>
+  </div>
   <h3>Active Bookings</h3>
   <% if !@my_active_bookings.nil? && !@my_active_bookings.empty? %>
     <% @my_active_bookings.each do |booking| %>
-      <div class="row mb-2">
-        <div class="col">
-          Booking id: <%= booking.id %> by <%= booking.user.email %>,
-          starting <%= booking.start_date %>,
-          ending <%= booking.end_date %>,
-          Booked by <%= booking.user.email %>,
-          Island Owner <%= booking.island.user.email %>
-          <% if booking.user.id == current_user.id %>
-            <%= link_to "Delete", booking_path(booking), class: "btn btn-danger btn-sm text-white",
-              data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
-          <% end %>
+      <div class="d-flex w-100 py-2">
+        <div>
+          <img class="img-card-booking" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        </div>
+        <div class="d-flex justify-content-between w-100 details-booking">
+          <div>
+            <h2><%= booking.island.name %></h2>
+              <ul>
+                <li>
+                    <div class="chip me-0 text-info"><i class="bi bi-geo-alt-fill"></i>&nbsp;<span class="text-muted"><%= booking.island.address %></span></div>
+                  </li>
+                  <li>
+                    <div class="chip me-0 text-info"><i class="bi bi-calendar-range"></i></i>&nbsp;<span class="text-muted"><%= booking.start_date %> - <%= booking.end_date %></span></div>
+                  </li>
+                  <li>
+                    <div class="chip me-0 text-info"><i class="bi bi-cash-stack"></i>&nbsp;<span class="text-muted">2300€</span></div>
+                  </li>
+              </ul>
+          </div>
+          <div class="d-flex">
+            <div class="px-2">
+              <%#= link_to root_path, class:"btn btn-primary btn-sm" do %><!--i class="bi fa-xl bi-eye btn-booking-card"></i--><%# end %>
+            </div>
+            <div>
+              <% if booking.user.id == current_user.id %>
+                <%= link_to booking_path(booking), class:"btn btn-danger btn-sm text-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %><i class="bi fa-xl bi-trash"></i><% end %>
+              <% else %>
+                <% if booking.status == "pending" %>
+                  <%= button_to "Approve", booking_path(booking, status: "approved"), class:"btn btn-primary btn-sm text-light", method: :patch %>
+                  &nbsp;
+                  <%= button_to "Decline", booking_path(booking, status: "declined"), class:"btn btn-danger btn-sm text-light", method: :patch %>
+                <% else %>
+                  <% if booking.status == "declined" %>
+                    <a class="btn btn-danger text-light"><%= booking.status.capitalize %></a>
+                  <% elsif booking.status == "pending" %>
+                    <a class="btn btn-warning text-light"><%= booking.status.capitalize  %></a>
+                  <% else %>
+                    <a class="btn btn-success text-light"><%= booking.status.capitalize  %></a>
+                <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>
-  <% else %>
+      <% else %>
     <div class="row mb-2">
         <div class="col">
           There are no active bookings for you currently!
         </div>
       </div>
   <% end %>
-  <br>
-  <h3>Previous Bookings</h3>
+
+
+
+
+
+  <div class="pt-4">
+    <h3>Previous Bookings</h3>
+  </div>
   <% if !@my_previous_bookings.nil? && !@my_previous_bookings.empty? %>
       <% @my_previous_bookings.each do |booking| %>
-        <div class="row mb-2">
-          <div class="col">
-            Booking id: <%= booking.id %> by <%= booking.user.email %>,
-            starting <%= booking.start_date %>,
-            ending <%= booking.end_date %>,
-            Booked by <%= booking.user.email %>,
-            Island Owner <%= booking.island.user.email %>
-            <% if booking.user.id == current_user.id %>
-              <%= link_to "Delete", booking_path(booking), class: "btn btn-danger btn-sm text-white",
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
-            <% end %>
+         <div class="d-flex w-100 py-2">
+        <div>
+          <img class="img-card-booking" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+        </div>
+        <div class="d-flex justify-content-between w-100 details-booking">
+          <div>
+            <h2>Island name</h2>
+              <ul>
+                <li>
+                    <div class="chip me-0 text-info"><i class="bi bi-geo-alt-fill"></i>&nbsp;<span class="text-muted"><%= booking.island.address %></span></div>
+                  </li>
+                  <li>
+                    <div class="chip me-0 text-info"><i class="bi bi-calendar-range"></i></i>&nbsp;<span class="text-muted"><%= booking.start_date %> - <%= booking.end_date %></span></div>
+                  </li>
+                  <li>
+                    <div class="chip me-0 text-info"><i class="bi bi-cash-stack"></i>&nbsp;<span class="text-muted">2300€</span></div>
+                  </li>
+              </ul>
+          </div>
+          <div class="d-flex">
+            <div class="px-2">
+              <%= link_to root_path, class:"btn btn-primary btn-sm" do %><i class="bi fa-xl bi-eye btn-booking-card"></i><% end %>
+            </div>
+            <div>
+              <% if booking.user.id == current_user.id %>
+                <%= link_to booking_path(booking), class:"btn btn-danger btn-sm text-light",data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %><i class="bi fa-xl bi-trash"></i><% end %>
+              <% end %>
+            </div>
           </div>
         </div>
+      </div>
       <% end %>
     <% else %>
       <div class="row mb-2">
