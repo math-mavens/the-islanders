@@ -1,11 +1,11 @@
 <div class="container-fluid px-5 py-5">
-  <div class="py-2">
+  <div class="pt-4">
     <h1>Welcome to you booking manager</h1>
   </div>
   <h3>Active Bookings</h3>
   <% if !@my_active_bookings.nil? && !@my_active_bookings.empty? %>
     <% @my_active_bookings.each do |booking| %>
-      <div class="d-flex w-100 ">
+      <div class="d-flex w-100 py-2">
         <div>
           <img class="img-card-booking" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         </div>
@@ -22,9 +22,6 @@
                   <li>
                     <div class="chip me-0 text-info"><i class="bi bi-cash-stack"></i>&nbsp;<span class="text-muted">2300€</span></div>
                   </li>
-                  <li>
-                    <div class="chip me-0 text-info"><i class="bi bi-info-square"></i></i>&nbsp;<span class="text-muted"><%= booking.status.capitalize %></span></div>
-                  </li>
               </ul>
           </div>
           <div class="d-flex">
@@ -40,7 +37,13 @@
                   &nbsp;
                   <%= button_to "Decline", booking_path(booking, status: "declined"), class:"btn btn-danger btn-sm text-light", method: :patch %>
                 <% else %>
-                  <%= booking.status %>
+                  <% if booking.status == "declined" %>
+                    <a class="btn btn-danger text-light"><%= booking.status.capitalize %></a>
+                  <% elsif booking.status == "pending" %>
+                    <a class="btn btn-warning text-light"><%= booking.status.capitalize  %></a>
+                  <% else %>
+                    <a class="btn btn-success text-light"><%= booking.status.capitalize  %></a>
+                <% end %>
                 <% end %>
               <% end %>
             </div>
@@ -60,11 +63,12 @@
 
 
 
-
-  <h3>Previous Bookings</h3>
+  <div class="pt-4">
+    <h3>Previous Bookings</h3>
+  </div>
   <% if !@my_previous_bookings.nil? && !@my_previous_bookings.empty? %>
       <% @my_previous_bookings.each do |booking| %>
-         <div class="d-flex w-100 ">
+         <div class="d-flex w-100 py-2">
         <div>
           <img class="img-card-booking" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         </div>
