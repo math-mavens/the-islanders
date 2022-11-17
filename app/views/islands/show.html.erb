@@ -5,8 +5,10 @@
       <div class="col-lg-9 ">
       <div class="d-flex align-items-start">
         <h1><%= @island.name %></h1>
-        <%= link_to edit_island_path(@island)do %>
-        <i class="ms-2 bi bi-pencil-square"></i>
+        <% if @island.user == current_user %>
+          <%= link_to edit_island_path(@island)do %>
+          <i class="ms-2 bi bi-pencil-square"></i>
+          <% end %>
         <% end %>
       </div>
           <div>
@@ -53,13 +55,12 @@
           <div class="d-flex justify-content-center">
             <% if @island.booked? %>
               <div class="text-danger mt-3">Not available</div>
-            <% elsif @island.user.id == current_user.id %>
+            <% elsif @island.user == current_user %>
               <div>&nbsp;</div>
             <% else %>
               <%= link_to "Book now", new_island_booking_path(@island),
               class: "btn btn-primary rounded-pill px-3 book-btn-details" %>
             <% end %>
-
           </div>
         </div>
       </div>

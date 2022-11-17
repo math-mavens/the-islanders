@@ -7,7 +7,6 @@ class IslandsController < ApplicationController
   end
 
   def show
-
     @island = Island.find(params[:id])
     @markers = Island.where(id: params[:id]).geocoded.map do |island|
       {
