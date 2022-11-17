@@ -13,7 +13,7 @@ class IslandsController < ApplicationController
         lat: island.latitude,
         lng: island.longitude,
         info_window: render_to_string(partial: "info_window", locals: { island: island }),
-        image_url: helpers.asset_url("the-islanders-map-logo.png")
+        image_url: helpers.asset_url("https://raw.githubusercontent.com/math-mavens/the-islanders/master/app/assets/images/map-pin.jpg")
       }
     end
   end
