@@ -6,4 +6,8 @@ class Island < ApplicationRecord
   validates :price_per_day, numericality: { greater_than: 0 }
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def booked?
+    bookings.any?(&:active?)
+  end
 end

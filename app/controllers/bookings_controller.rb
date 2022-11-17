@@ -18,8 +18,8 @@ class BookingsController < ApplicationController
   def new
     @island = Island.find(params[:island_id])
     @booking = Booking.new
-    @booking.start_date = Date.tomorrow
-    @booking.end_date = Date.tomorrow + 1
+    @booking.start_date = Date.today
+    @booking.end_date = Date.tomorrow
   end
 
   def create
@@ -27,7 +27,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @island = Island.find(params[:island_id])
     @booking.island = @island
-    if @booking.save
+    if @booking.valid?
+      @booking.save
       redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
