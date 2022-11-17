@@ -4,4 +4,6 @@ class Island < ApplicationRecord
   validates :name, :price_per_day, :description, presence: true
   validates :description, length: { minimum: 30 }
   validates :price_per_day, numericality: { greater_than: 0 }
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
