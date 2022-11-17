@@ -1,0 +1,66 @@
+<div class="container-fluid py-5 px-5 rounded">
+  <h2>Booking card for user</h2>
+  <div class="d-flex w-100 ">
+    <div>
+      <img class="img-card-booking" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    </div>
+    <div class="d-flex justify-content-between w-100 details-booking">
+      <div>
+        <h2>Island name</h2>
+          <ul>
+             <li>
+                <div class="chip me-0 text-info"><i class="bi bi-geo-alt-fill"></i>&nbsp;<span class="text-muted">Address</span></div>
+              </li>
+              <li>
+                <div class="chip me-0 text-info"><i class="bi bi-calendar-range"></i></i>&nbsp;<span class="text-muted">Date range</span></div>
+              </li>
+              <li>
+                <div class="chip me-0 text-info"><i class="bi bi-cash-stack"></i>&nbsp;<span class="text-muted">2300€</span></div>
+              </li>
+              <li>
+                <div class="chip me-0 text-info"><i class="bi bi-info-square"></i></i>&nbsp;<span class="text-muted">Booking pending/rejected/accepted</span></div>
+              </li>
+          </ul>
+      </div>
+       <div>
+        <%= link_to root_path, class:"btn btn-primary btn-sm" do %><i class="bi fa-xl bi-eye btn-booking-card"></i><% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid py-5 px-5 rounded">
+  <h2>Booking card for owner</h2>
+  <div class="d-flex w-100 ">
+    <div>
+      <img class="img-card-booking" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    </div>
+    <div class="d-flex justify-content-between w-100 details-booking">
+      <div>
+        <h2>Island name</h2>
+          <ul>
+             <li>
+                <div class="chip me-0 text-info"><i class="bi bi-geo-alt-fill"></i>&nbsp;<span class="text-muted">Address</span></div>
+              </li>
+              <li>
+                <div class="chip me-0 text-info"><i class="bi bi-calendar-range"></i></i>&nbsp;<span class="text-muted">Date range</span></div>
+              </li>
+              <li>
+                <div class="chip me-0 text-info"><i class="bi bi-cash-stack"></i>&nbsp;<span class="text-muted">2300€</span></div>
+              </li>
+              <li>
+                <div class="chip me-0 text-info"><i class="bi bi-person-fill"></i>&nbsp;<span class="text-muted">Booking asker</span></div>
+              </li>
+          </ul>
+      </div>
+       <div class="d-flex ">
+        <div class="px-2">
+          <%= link_to root_path, class:"btn btn-success btn-sm" do %><i class="bi bi-check fa-xl btn-booking-card text-light"></i><% end %>
+        </div>
+        <div>
+          <%= link_to root_path, class:"btn btn-danger btn-sm" do %><i class="bi bi-x fa-xl bi-eye btn-booking-card text-light"></i><% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
