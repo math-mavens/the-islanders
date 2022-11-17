@@ -1,0 +1,25 @@
+.col-details {
+  padding: 0px !important;
+}
+
+.booking-infos{
+  height:280px;
+  background-color: #ededee;
+  position: relative;
+  padding: 14px;
+}
+.book-btn-details {
+  position: absolute;
+  bottom: 10px;
+}
+
+.sticky {
+  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+}
+
+.details-of-island span {
+  font-size: 18px;
+}

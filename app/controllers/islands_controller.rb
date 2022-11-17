@@ -26,7 +26,7 @@ class IslandsController < ApplicationController
     @island = Island.new(island_params)
     @island.user = current_user
     if @island.save
-      redirect_to islands_path
+      redirect_to island_path(@island)
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class IslandsController < ApplicationController
 
   def update
     @island.update(island_params)
-    redirect_to islands_path
+    redirect_to island_path(@island)
   end
 
   def destroy
