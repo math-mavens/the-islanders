@@ -29,11 +29,19 @@
           </div>
           <div class="d-flex">
             <div class="px-2">
-              <%= link_to root_path, class:"btn btn-primary btn-sm" do %><i class="bi fa-xl bi-eye btn-booking-card"></i><% end %>
+              <%#= link_to root_path, class:"btn btn-primary btn-sm" do %><!--i class="bi fa-xl bi-eye btn-booking-card"></i--><%# end %>
             </div>
             <div>
               <% if booking.user.id == current_user.id %>
-                <%= link_to booking_path(booking), class:"btn btn-danger btn-sm text-light",data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %><i class="bi fa-xl bi-trash"></i><% end %>
+                <%= link_to booking_path(booking), class:"btn btn-danger btn-sm text-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %><i class="bi fa-xl bi-trash"></i><% end %>
+              <% else %>
+                <% if booking.status == "pending" %>
+                  <%= button_to "Approve", booking_path(booking, status: "approved"), class:"btn btn-primary btn-sm text-light", method: :patch %>
+                  &nbsp;
+                  <%= button_to "Decline", booking_path(booking, status: "declined"), class:"btn btn-danger btn-sm text-light", method: :patch %>
+                <% else %>
+                  <%= booking.status %>
+                <% end %>
               <% end %>
             </div>
           </div>

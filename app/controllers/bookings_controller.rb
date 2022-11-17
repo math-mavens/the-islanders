@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[show edit update destroy]
+  before_action :set_booking, only: %i[show edit update destroy put patch]
 
   def index
     @my_bookings = Booking.all.select do |booking|
@@ -38,13 +38,23 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    status = params[:status]
+    @booking.status = status
+    @booking.save
+    redirect_to bookings_path
   end
 
   def destroy
     @booking.destroy
     redirect_to bookings_path
+  end
+
+  def put
+    raise
+  end
+
+  def patch
+    raise
   end
 
   private
