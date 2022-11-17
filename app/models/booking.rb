@@ -10,7 +10,7 @@ class Booking < ApplicationRecord
   validate :start_date_after_today
 
   def active?
-    end_date >= Date.today && (status == "pending" || status == "approved")
+    end_date >= Date.today
   end
 
   private

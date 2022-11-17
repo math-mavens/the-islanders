@@ -29,7 +29,7 @@
               <%#= link_to root_path, class:"btn btn-primary btn-sm" do %><!--i class="bi fa-xl bi-eye btn-booking-card"></i--><%# end %>
             </div>
             <div>
-              <% if booking.user.id == current_user.id %>
+              <% if booking.user.id == current_user.id && booking.status == "pending" %>
                 <%= link_to booking_path(booking), class:"btn btn-danger btn-sm text-light", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } do %><i class="bi fa-xl bi-trash"></i><% end %>
               <% else %>
                 <% if booking.status == "pending" %>
@@ -38,11 +38,9 @@
                   <%= button_to "Decline", booking_path(booking, status: "declined"), class:"btn btn-danger btn-sm text-light", method: :patch %>
                 <% else %>
                   <% if booking.status == "declined" %>
-                    <a class="text-danger"><%= booking.status.capitalize %></a>
-                  <% elsif booking.status == "pending" %>
-                    <a class="text-warning"><%= booking.status.capitalize  %></a>
+                    <span class="text-danger"><%= booking.status.capitalize %></span>
                   <% else %>
-                    <a class="text-success"><%= booking.status.capitalize  %></a>
+                    <span class="text-success"><%= booking.status.capitalize  %></span>
                 <% end %>
                 <% end %>
               <% end %>

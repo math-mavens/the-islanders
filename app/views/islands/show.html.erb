@@ -53,6 +53,8 @@
           <div class="d-flex justify-content-center">
             <% if @island.booked? %>
               <div class="text-danger mt-3">Not available</div>
+            <% elsif @island.user.id == current_user.id %>
+              <div>&nbsp;</div>
             <% else %>
               <%= link_to "Book now", new_island_booking_path(@island),
               class: "btn btn-primary rounded-pill px-3 book-btn-details" %>
