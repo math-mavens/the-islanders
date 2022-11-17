@@ -8,6 +8,10 @@ class Booking < ApplicationRecord
   validates :end_date, comparison: { greater_than: :start_date }
   validates :user, uniqueness: { scope: %i[island start_date] }
 
+  def active?
+    self[:end_date] >= Date.today
+  end
+
   private
 
   def set_defaults

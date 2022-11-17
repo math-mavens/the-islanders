@@ -2,7 +2,14 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
 
   def index
-    @bookings = Booking.all
+    @my_bookings = Booking.all.select do |booking|
+      booking.user.id == current_user.id || booking.island.user.id == current.user.id
+    end
+
+    return if @my_bookings.empty?
+
+    @my_active_bookings = @my_bookings.select(&:active?) # same as { |b| b.active? }
+    @my_previous_bookings = @my_bookings.select { |b| b.active? == false }
   end
 
   def show
