@@ -1,6 +1,6 @@
 <div class="container-fluid px-5 py-5">
-  <div class="pt-4">
-    <h1>Welcome to you booking manager</h1>
+  <div class="pt-2">
+    <h1>My Bookings</h1>
   </div>
   <h3>Active Bookings</h3>
   <% if !@my_active_bookings.nil? && !@my_active_bookings.empty? %>
@@ -41,9 +41,9 @@
                 <% else %>
                   <% if booking.status == "declined" %>
 
-                    <a class="btn font-weight-bold btn-danger-custom text-black"><%= booking.status.capitalize %></a>
+                    <a class="btn font-weight-bold btn-danger-custom"><%= booking.status.capitalize %></a>
                   <% else %>
-                    <a class="btn font-weight-bold btn-success-custom text-black"><%= booking.status.capitalize  %></a>
+                    <a class="btn font-weight-bold btn-success-custom"><%= booking.status.capitalize  %></a>
                 <% end %>
                 <% end %>
               <% end %>

@@ -61,9 +61,13 @@
 
 
 .btn-success-custom {
-  background-color: #9CE7AE;
+  border-color: #9CE7AE;
+  border: solid 1px;
+  color: green;
 }
 
 .btn-danger-custom {
-  background-color: #FD5D60;
+  border-color: #FD5D60;
+  border: solid 1px;
+  color:red;
 }
