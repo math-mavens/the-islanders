@@ -40,9 +40,10 @@
                   </div>
                 <% else %>
                   <% if booking.status == "declined" %>
-                    <span class="text-danger"><%= booking.status.capitalize %></span>
+
+                    <a class="btn font-weight-bold btn-danger-custom text-black"><%= booking.status.capitalize %></a>
                   <% else %>
-                    <span class="text-success"><%= booking.status.capitalize  %></span>
+                    <a class="btn font-weight-bold btn-success-custom text-black"><%= booking.status.capitalize  %></a>
                 <% end %>
                 <% end %>
               <% end %>
