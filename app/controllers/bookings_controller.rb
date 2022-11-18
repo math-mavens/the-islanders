@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy put patch]
 
   def index
-    @my_bookings = Booking.all.select do |booking|
+    @my_bookings = Booking.all.order('updated_at DESC').select do |booking|
       booking.user.id == current_user.id || booking.island.user.id == current_user.id
     end
 
@@ -17,6 +17,9 @@ class BookingsController < ApplicationController
 
   def new
     @island = Island.find(params[:island_id])
+    if @island.user.id == current_user.id
+      redirect_to island_path(@island)
+    end
     @booking = Booking.new
     @booking.start_date = Date.today
     @booking.end_date = Date.tomorrow

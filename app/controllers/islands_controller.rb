@@ -3,11 +3,10 @@ class IslandsController < ApplicationController
   before_action :set_island, only: %i[show edit update destroy]
 
   def index
-    @islands = Island.all
+    @islands = Island.all.order('updated_at DESC')
   end
 
   def show
-
     @island = Island.find(params[:id])
     @markers = Island.where(id: params[:id]).geocoded.map do |island|
       {
