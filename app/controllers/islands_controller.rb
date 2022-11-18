@@ -33,6 +33,9 @@ class IslandsController < ApplicationController
   end
 
   def edit
+    # if current_user.id != @island.user.id
+    #   redirect_to islands_path
+    # end
   end
 
   def update
