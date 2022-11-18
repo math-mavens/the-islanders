@@ -4,7 +4,7 @@
   </div>
   <div class="row d-flex justify-content-start p-1">
   <div class="col-12 col-lg-6 mb-2">
-    <div class="card p-4 border-primary rounded new-booking-card">
+    <div class="card p-4 border-primary rounded new-booking-card shadow-lg">
       <%= link_to island_path(@island) do %>
         <h5 class="card-title font-weight-bold text-decoration-none"><%= @island.name %></h5>
       <% end %>
@@ -51,7 +51,7 @@
     </div>
   </div>
   <div class="col-12 col-lg-6">
-    <div class="card p-4 border-primary rounded new-booking-card">
+    <div class="card p-4 border-primary rounded new-booking-card shadow-lg">
       <%= simple_form_for [@island, @booking] do |f| %>
         <%= f.input :start_date, as: :date %>
         <%= f.input :end_date, as: :date %>

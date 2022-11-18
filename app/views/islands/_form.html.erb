@@ -1,4 +1,5 @@
- <%= simple_form_for @island do |f| %>
+ <div class="card shadow-lg p-4 border-primary rounded w-75">
+  <%= simple_form_for @island do |f| %>
       <%= f.input :name, placeholder: "Write your Island's Name" %>
       <%= f.input :address,
                   input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
@@ -8,3 +9,4 @@
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit "Confirm", class: "btn btn-primary" %>
   <% end %>
+ </div>
