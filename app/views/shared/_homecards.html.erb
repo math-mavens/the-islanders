@@ -6,7 +6,7 @@
         <div class="card">
           <%= link_to island_path(island) do %>
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-              <img src="https://theworldtravelguy.com/wp-content/uploads/2021/03/DSCF1480_1200.jpg" class="img-fluid" />
+                <%= render "shared/imgbooking", island: island %>
             </div>
           <% end %>
           <div class="card-body">
