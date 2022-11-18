@@ -1,5 +1,5 @@
 <div class="container-fluid  px-5">
-  <h1 class="text-center ">Our Best Islands</h2>
+  <h1 class="text-center border-bottom">Our Best Islands</h2>
   <p class="text-center py-3 text-muted">Welcome to the biggest islands booking platform. Check our different islands in Indonesia and find yours.<br> Here are our 6 best islands for you. You can check it in details and look at the options (bedrooms, size, pool, ..) available on each.</p>
   <div class="container-home mt-4">
     <% @islands.take(6).each do |island| %>
@@ -56,4 +56,5 @@
         </div>
     <% end %>
   </div>
+  <div class="w-100 text-end py-2"><%= link_to "View all Islands", islands_path, class: "btn btn-primary" %></div>
 </div>
