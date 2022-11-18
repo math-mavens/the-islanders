@@ -17,6 +17,9 @@ class BookingsController < ApplicationController
 
   def new
     @island = Island.find(params[:island_id])
+    if @island.user.id == current_user.id
+      redirect_to island_path(@island)
+    end
     @booking = Booking.new
     @booking.start_date = Date.today
     @booking.end_date = Date.tomorrow
