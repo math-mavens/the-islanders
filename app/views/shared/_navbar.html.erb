@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light sticky-top navbar-lewagon">
   <div class="container-fluid mx-5 px-4">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/math-mavens/the-islanders/master/app/assets/images/the-islanders-logo-cropped.png" %>
@@ -25,11 +25,11 @@
           <li class="nav-item dropdown ms-3">
             <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <button type="button" class="btn btn-secondary rounded-circle text-white" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div><%= current_user.email[0].capitalize %></div>
+              <%= current_user.email[0].capitalize %>
             </button>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%#= link_to "Action", "#", class: "dropdown-item" %>
+              <%#= link_to "Another action", "#", class: "dropdown-item" %>
               <% if user_signed_in? %>
                 <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               <% end %>
