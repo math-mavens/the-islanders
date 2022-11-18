@@ -1,5 +1,10 @@
 <div>
   <div class="rounded-4">
-    <%= cl_image_tag island.photos.first.key, class:"img-card-booking", style:"width: -webkit-fill-available" %>
+    <% if island.photos.first.nil? %>
+      <%= image_tag "https://raw.githubusercontent.com/math-mavens/the-islanders/master/app/assets/images/banner-3.jpg",
+        class:"img-card-booking", style:"width: -webkit-fill-available" %>
+    <% else %>
+      <%= cl_image_tag island.photos.first.key, class:"img-card-booking", style:"width: -webkit-fill-available" %>
+    <% end %>
   </div>
 </div>
