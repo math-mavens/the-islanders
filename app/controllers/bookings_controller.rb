@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy put patch]
 
   def index
-    @my_bookings = Booking.all.select do |booking|
+    @my_bookings = Booking.all.order('updated_at DESC').select do |booking|
       booking.user.id == current_user.id || booking.island.user.id == current_user.id
     end
 
